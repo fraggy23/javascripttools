@@ -14,18 +14,18 @@ let MathUtils = {
     }
 }
 
-  console.log(cid[[0],[1]])
+  //console.log(cid[[0],[1]])
   let changeArray = [0,0,0,0,0,0,0,0,0]
   let changevalue = 0
   let unit = [0.01,0.05,0.1,0.25,1,5,10,20,100]
   let counter = 0
   let cidtotal = 0
   let originalcash = cash
-  console.log(changeArray.length,cash+100,price-changevalue)
+  //console.log(changeArray.length,cash+100,price-changevalue)
 
   for (let i = 8; i >=0; i--) {
     cidtotal += cid[i][1]
-    console.log(i,cidtotal)
+    //console.log(i,cidtotal)
   }
 
 if (cidtotal< cash-price) return {status: "INSUFFICIENT_FUNDS", change: []}
@@ -37,20 +37,20 @@ for (let i = 8; i >= 0 ; i--) {
     cid[i][1] = Number(financial(cid[i][1] - unit[i]))
     cash = cash - unit[i]
     changeArray[i] = Number(financial(changeArray[i] + unit[i]))
-    //console.log(changevalue,"hello",cash,i,unit[i])
+    ////console.log(changevalue,"hello",cash,i,unit[i])
     changevalue = changevalue + unit[i]
 
 
 
     counter++
-    console.log(counter,cash,changevalue,financial(cash-price),unit[i],i,cid)
+    //console.log(counter,cash,changevalue,financial(cash-price),unit[i],i,cid)
     if (unit[i] == 5) {
-      console.log(cid[i][1] >= financial(unit[i]),"hello",financial(cid[i][1]),financial(unit[i]))
+      //console.log(cid[i][1] >= financial(unit[i]),"hello",financial(cid[i][1]),financial(unit[i]))
     }
 
 
     }
-    //console.log(i)
+    ////console.log(i)
 }
 let can = []
 let closed = [["ONE HUNDRED",changeArray[8]],["TWENTY",changeArray[7]],["TEN",changeArray[6]],["FIVE",changeArray[5]],["ONE",changeArray[4]],["QUARTER",changeArray[3]],["DIME",changeArray[2]],["NICKEL",changeArray[1]],["PENNY",changeArray[0]]]
@@ -58,7 +58,7 @@ let closed = [["ONE HUNDRED",changeArray[8]],["TWENTY",changeArray[7]],["TEN",ch
 closed = closed.reverse()
 
 
-console.log("wowowow")
+//console.log("wowowow")
 
 
 
@@ -110,13 +110,13 @@ if (changeArray[0] > 0) {
 
 
 
-console.log(can,"1231",originalcash-changevalue-price< 0.0000001,originalcash,changevalue,price)
+//console.log(can,"1231",originalcash-changevalue-price< 0.0000001,originalcash,changevalue,price)
 
 if (originalcash-changevalue-price > 0.0000001) return {status: "INSUFFICIENT_FUNDS", change: []}
 
 
 
-//console.log(financial(cash),price,financial(changevalue),cid,changeArray)
+////console.log(financial(cash),price,financial(changevalue),cid,changeArray)
   let obj = {status: "OPEN" , change: ["FIVE", 55]}
 // if (cash < price) {
  // obj.status = "INSUFFICIENT_FUNDS";
@@ -126,13 +126,13 @@ if (originalcash-changevalue-price > 0.0000001) return {status: "INSUFFICIENT_FU
 
  obj.change = can
 
-console.log(obj,cidtotal+price-originalcash,closed)
+//console.log(obj,cidtotal+price-originalcash,closed)
 
 if (cidtotal+price-originalcash < 0.000001) {obj.change=closed
  obj.status="CLOSED"
- console.log("if",obj)}
+ //console.log("if",obj)}
 
   return obj;
 }
 
-console.log(checkCashRegister(19.5, 20, [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]))
+//console.log(checkCashRegister(19.5, 20, [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]))
