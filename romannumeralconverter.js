@@ -11,7 +11,7 @@ function convertToRoman(num) {
      while (romanum >= arabic[i] ) {
        romanum = romanum - arabic[i];
        result = result + roman[i];
-       console.log(num,romanum,i ,result, num-romanum)
+       //console.log(num,romanum,i ,result, num-romanum)
        if (romanum === 0 ) return result ;
      }
    }
