@@ -25,18 +25,18 @@ for (let i = 0; i < rotlength; i++) {
   //str.map(num => )
 
   //return str;
-  console.log(rotarr[1].toLowerCase())
+  //console.log(rotarr[1].toLowerCase())
 
 
 for (let i = 0; i < alphabet.length; i++) {
   let regex = new RegExp(alphabet[i],"g")
   let alpha = alphabet[i]
   str = str.replaceAll(regex,rotarr[i].toLowerCase())
-  console.log(str.replaceAll(regex,alphabet[i]).toUpperCase(),rotarr[i],alphabet[i],regex,i)
-  console.log(str)
+  //console.log(str.replaceAll(regex,alphabet[i]).toUpperCase(),rotarr[i],alphabet[i],regex,i)
+  //console.log(str)
 
 }
-console.log(str.toUpperCase())
+//console.log(str.toUpperCase())
 
 return str.toUpperCase()
 
